@@ -19,7 +19,7 @@ export default function Navbar() {
           <h1 className={cn("hidden md:block text-xl md:text-3xl font-bold text-primary",
           font.className
           )}>
-            Mugiwara
+            Nakama👒
           </h1>
         </Link>
       </div>
