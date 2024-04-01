@@ -18,7 +18,7 @@ export default function Sidebar() {
     },
     {
       icon:Plus,
-      href: "/companion/new",
+      href: "/nakama/new",
       label:"Create",
       pro:true
     },
