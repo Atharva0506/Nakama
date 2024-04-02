@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+
 import { auth, redirectToSignIn } from "@clerk/nextjs";
 import {NakamaForm} from "./components/nakaama-form"
 import prismadb from "@/lib/prismadb";
