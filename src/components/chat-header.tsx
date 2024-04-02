@@ -34,7 +34,7 @@ export const ChatHeader = ({
 
   const onDelete = async () => {
     try {
-      await axios.delete(`/api/companion/${companion.id}`);
+      await axios.delete(`/api/nakama/${companion.id}`);
       toast({
         description: "Success."
       });
@@ -76,7 +76,7 @@ export const ChatHeader = ({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => router.push(`/companion/${companion.id}`)}>
+            <DropdownMenuItem onClick={() => router.push(`/nakama/${companion.id}`)}>
               <Edit className="w-4 h-4 mr-2" />
               Edit
             </DropdownMenuItem>
