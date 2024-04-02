@@ -61,7 +61,7 @@ export async function POST(
 
     const records = await memoryManager.readLatestHistory(companionKey);
     if (records.length === 0) {
-      await memoryManager.seedChatHistory(companion.seed, "\n\n", companionKey);
+      await memoryManager.seedChatHistory(companion.seed || "", "\n\n", companionKey);
     }
     await memoryManager.writeToHistory("User: " + prompt + "\n", companionKey);
 

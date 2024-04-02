@@ -12,13 +12,8 @@ import { Button } from "@/components/ui/button";
 
 
 const font = Poppins({ weight: "600", subsets: ["latin"] });
-interface NavbarProps {
-  isPro: boolean;
-}
 
-const Navbar = ({
-  isPro
-}: NavbarProps) => {
+const Navbar = () => {
  
   return ( 
     <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 h-16 border-b border-primary/10 bg-secondary">
@@ -31,12 +26,7 @@ const Navbar = ({
         </Link>
       </div>
       <div className="flex items-center gap-x-3">
-        {!isPro && (
-          <Button  size="sm" variant="premium">
-            Upgrade
-            <Sparkles className="h-4 w-4 fill-white text-white ml-2" />
-          </Button>
-        )}
+       
         <ModeToggle />
         <UserButton afterSignOutUrl="/" />
       </div>
