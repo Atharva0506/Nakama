@@ -1,15 +1,50 @@
-import React from 'react'
-import prismadb from "@/lib/prismadb"
-import SearchInput from '@/components/search-input'
-import Categories from '@/components/categories'
-const RootPage= async ()=> {
-  const categories = await prismadb.category.findMany();
-  return (
-    <div className='h-full p-4 space-y-2'>
-     <SearchInput />
-     <Categories data={categories} />
-    </div>
-  )
+import prismadb from "@/lib/prismadb";
+import Categories from "@/components/categories";
+import Companions from "@/components/companions";
+import SearchInput from "@/components/search-input";
+
+interface RootPageProps {
+  searchParams: {
+    categoryId: string;
+    name: string;
+  };
 }
 
-export default RootPage 
+const RootPage: React.FC<RootPageProps> = async ({ searchParams }) => {
+  try {
+    const data = await prismadb.companion.findMany({
+      where: {
+        categoryId: searchParams.categoryId,
+        name: {
+          contains: searchParams.name,
+        },
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+      include: {
+        _count: {
+          select: {
+            messages: true,
+          }
+        }
+      },
+    });
+
+    const categories = await prismadb.category.findMany();
+
+    return (
+      <div className="h-full p-4 space-y-2">
+        <SearchInput />
+        <Categories data={categories} />
+        <Companions data={data} />
+      </div>
+    );
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    // Handle error gracefully
+    return <div>Error fetching data</div>;
+  }
+};
+
+export default RootPage;
