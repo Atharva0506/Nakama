@@ -68,14 +68,14 @@ export const NakamaForm = ({
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues:  {
+    defaultValues: initialData || {
       name: "" ,
       description: "",
       instructions: "",
       seed: "",
       src: "",
       categoryId: "",
-    } || initialData,
+    } ,
   });
 
   const isLoading = form.formState.isSubmitting;

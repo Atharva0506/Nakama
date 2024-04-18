@@ -1,6 +1,6 @@
 
 import { auth, redirectToSignIn } from "@clerk/nextjs";
-import {NakamaForm} from "./components/nakaama-form"
+import {NakamaForm} from "./components/nakama-form"
 import prismadb from "@/lib/prismadb";
 
 
@@ -31,6 +31,7 @@ const NakamaIdPage = async ({
   const categories = await prismadb.category.findMany();
 
   return ( 
+
     <NakamaForm initialData={companion} categories={categories} />
   );
 }
