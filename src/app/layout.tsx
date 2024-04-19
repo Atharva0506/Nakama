@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth focus:scroll-auto">
       <body className={cn("bg-secondary",inter.className)}>
         <ThemeProvider  attribute="class" defaultTheme="system" enableSystem>
         {children}

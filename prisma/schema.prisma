@@ -15,21 +15,21 @@ model Category {
 }
 
 model Companion {
-  id    String  @id @default(cuid()) @map("_id")
+  id    String   @id @default(cuid()) @map("_id")
   userId         String
   userName       String
   src            String
   name           String
-  description    String?
-  instructions   String?
-  seed           String?
+  description    String
+  instructions   String
+  seed           String
 
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
   category       Category @relation(fields: [categoryId], references: [id])
   categoryId     String
-  messages      Message[]
+  messages       Message[]
 }
 enum Role {
   user

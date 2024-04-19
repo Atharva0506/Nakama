@@ -33,8 +33,14 @@ Human: It's fascinating to see your vision unfold. Any new projects or innovatio
 Elon: Always! But right now, I'm particularly excited about Neuralink. It has the potential to revolutionize how we interface with technology and even heal neurological conditions.
 `;
 
+
+interface CompanionFormProps {
+  initialData: Companion | null;
+  categories: Category[];
+};
+
 const formSchema = z.object({
-  name: z.string().min(1, {
+    name: z.string().min(1, {
     message: "Name is required.",
   }),
   description: z.string().min(1, {
@@ -54,28 +60,22 @@ const formSchema = z.object({
   }),
 });
 
-interface CompanionFormProps {
-  categories: Category[];
-  initialData: Companion | null;
-};
-
 export const NakamaForm = ({
-  categories,
-  initialData
+  initialData,categories
 }: CompanionFormProps) => {
   const { toast } = useToast();
   const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: initialData || {
-      name: "" ,
-      description: "",
-      instructions: "",
-      seed: "",
-      src: "",
-      categoryId: "",
-    } ,
+    defaultValues: {
+      name: initialData ? initialData.name : "",
+      description: initialData ? initialData.description ?? "" : "",
+      instructions: initialData ? initialData.instructions ?? "" : "", 
+      seed: initialData ? initialData.seed ?? "" : "", 
+      src: initialData ? initialData.src : "",
+      categoryId: initialData ? initialData.categoryId : "",
+    },
   });
 
   const isLoading = form.formState.isSubmitting;
