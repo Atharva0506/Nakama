@@ -1,8 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Nakama AI: Your Personalized AI Companion
+
+Nakama AI is a dynamic web platform empowering users to craft their personalized AI companions. Supported by OpenAI and meta/llama-2-13b-chat, this platform enables users to provide instructions and example conversations, shaping their unique chat companion.
 
 ## Getting Started
 
 First, run the development server:
+
 
 ```bash
 npm run dev
@@ -19,18 +23,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+- **Customization**: Users have the freedom to customize and make their Nakama to suit their preferences, allowing for diverse interactions and functionalities.
+- **Versatility**: Whether for Information Retrieval, Task Automation, Personalized Recommendations, Learning and Education, Entertainment, or Security and Safety, Nakama caters to various needs seamlessly.
+- **User-Friendly Interface**: Nakama boasts a user-friendly interface for effortless companion creation and management. Users can easily navigate through options, edit, delete, and even copy their companion chats.
+- **Accessibility**: Accessibility is paramount, with the system ensuring users can engage with their Nakama from any device, anywhere.
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [NextJS](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [CLERK](https://clerk.dev/)
+- [PINECONE](https://pinecone.io/)
+- [UPSTASH](https://upstash.com/)
+- [OpenAI API](https://openai.com/)
+- [REPLICATE API (meta/llama-2-13b-chat)](https://www.replicate.ai/)
+- [MongoDB](https://www.mongodb.com/)
+- [Prisma](https://www.prisma.io/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Security and Privacy
 
-## Deploy on Vercel
+Nakama makes chatting easy, saving your conversations for later. It keeps your info safe, so you can enjoy personalized help and companionship worry-free.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Get Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Ready to create your personalized AI companion? [Head over to Nakama AI](https://nakama-taupe.vercel.app/) and start crafting your virtual friend today!
